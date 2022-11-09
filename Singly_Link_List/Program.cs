@@ -12,4 +12,8 @@ namespace Singly_Link_List
         public string nama;
         public Node next;
     }
+    class List
+    {
+        
+    }
 }
