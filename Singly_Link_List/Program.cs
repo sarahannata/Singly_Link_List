@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Singly_Link_List
 {
-    internal class Program
+    class Node
     {
-        static void Main(string[] args)
-        {
-        }
+        public int noMhs;
+        public string nama;
+        public Node next;
     }
 }
