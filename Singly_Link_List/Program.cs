@@ -38,6 +38,22 @@ namespace Singly_Link_List
                     Console.WriteLine("\nNomer mahasiswa sama tidak diijinkan\n");
                     return;
                 }
+                nodeBaru.next = START;
+                START = nodeBaru;
+                return;
+            }
+            /*Menemukan lokasi node baru didalam list*/
+
+            Node previous, current;
+            previous = START;
+
+            while((current != null) && (nim >= current.noMhs))
+            {
+                if (nim == current.noMhs)
+                {
+                    Console.WriteLine("\nNomer mahasiswa sama tidak diijinkan\n");
+                    return ;
+                }
 
             }
         }
