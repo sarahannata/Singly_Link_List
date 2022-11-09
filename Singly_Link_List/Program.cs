@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Singly_Link_List
 {
@@ -46,6 +42,7 @@ namespace Singly_Link_List
 
             Node previous, current;
             previous = START;
+            current = START;
 
             while((current != null) && (nim >= current.noMhs))
             {
@@ -54,8 +51,25 @@ namespace Singly_Link_List
                     Console.WriteLine("\nNomer mahasiswa sama tidak diijinkan\n");
                     return ;
                 }
+                /*Node baru akan ditempatkan diantara previous dan current*/
 
+                nodeBaru.next = current;
+                previous.next = nodeBaru;
             }
         }
+        /*Method untuk menghapus node tertentu didalam list*/
+        public bool delNode(int nim)
+        {
+            Node previous, current;
+            previous = current = null;
+            /*check apakah node yang dimaksud ada didalam list atau tidak*/
+            if (Search(nim, ref previous, ref current) == false)
+                return false;
+            previous.next = current.next;
+            if (current == START)
+                START = START.next;
+            return true;
+        }
+        
     }
 }
